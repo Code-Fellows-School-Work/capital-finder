@@ -17,7 +17,7 @@ class handler(BaseHTTPRequestHandler):
             r = requests.get(url)
             if r.status_code == 200:
                 data = r.json()
-                capital = data[0]["capital"][0] if "capital" in data[0] else "No capital found"
+                capital = data[0]["capital"][0]
                 message = f"The capital of {country_name} is {capital}"
             else:
                 message = f"Country {country_name} not found"
@@ -34,7 +34,7 @@ class handler(BaseHTTPRequestHandler):
                 message = f"Capital {capital_name} not found"
 
         else:
-            message = "Give me a country or capital please"
+            message = "Please enter a query in the url:\nEither ?country='Enter Country'\n or ?capital='Enter Capital"
 
         self.send_response(200)
         self.send_header('Content-type','text/plain')
