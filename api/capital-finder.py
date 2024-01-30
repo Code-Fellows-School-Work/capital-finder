@@ -23,17 +23,16 @@ class handler(BaseHTTPRequestHandler):
                 capital.append(definition)
             message = f"The capital of {country_name} is {str(capital)}"
 
-        if "capital" in dic:
+        elif "capital" in dic:
             capital_name = dic["capital"]
-            # used ChatGPT to correct the url
-            url = "https://restcountries.com/v3.1/capital/{capital_name}"
-            r = requests.get(url + dic["capital"])
-            data = r.json()
-            country = []
-            for capital_data in data:
-                definition = capital_data[0]["name"]["common"]
-                capital.append(definition)
-            message = f"{capital_name} is the capital of {str(country)}"
+            url = f"https://restcountries.com/v3.1/capital/{capital_name}"
+            r = requests.get(url)
+            if r.status_code == 200:
+                data = r.json()
+                country = data[0]["name"]["common"] if "name" in data[0] else "No country found"
+                message = f"{capital_name} is the capital of {country}"
+            else:
+                message = f"Capital {capital_name} not found"
 
         else:
             message = "Give me a country or capital please"
