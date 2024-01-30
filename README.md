@@ -11,8 +11,8 @@ V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/13)
 
 ### Setup
 .venv requirements (where applicable)
+run pip install requests
 I was unable to test the application locally using vercel dev, however web application works at:
-
 
 i.e.
 
