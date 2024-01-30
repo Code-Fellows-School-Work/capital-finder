@@ -34,7 +34,7 @@ class handler(BaseHTTPRequestHandler):
                 message = f"Capital {capital_name} not found"
 
         else:
-            message = "Please enter a query in the url:\nEither ?country='Enter Country'\n or ?capital='Enter Capital"
+            message = "Please add a query in the url:\nEither ?country='Enter Country'\nor ?capital='Enter Capital'"
 
         self.send_response(200)
         self.send_header('Content-type','text/plain')

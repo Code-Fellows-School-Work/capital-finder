@@ -3,7 +3,7 @@
 ## Project: Capital Finder
 
 ### Author: Errol Vidad
-V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/12)
+V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/13)
 
 ### Links and Resources
 - Back-end server url (when applicable): None
@@ -11,7 +11,8 @@ V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/12)
 
 ### Setup
 .venv requirements (where applicable)
-I was unable to run the 
+run pip install requests
+I was unable to test the application locally using vercel dev, however web application works at:
 
 i.e.
 
@@ -20,7 +21,8 @@ i.e.
 
 ### How to initialize/run your application (where applicable)
 
-- python band.py
+- Enter web application at:
+- Follow the directions on the web browser
 
 ### How to use your library (where applicable)
 ### Tests
