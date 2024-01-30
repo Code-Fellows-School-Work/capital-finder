@@ -10,9 +10,9 @@ V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/13)
 - Front-end application (when applicable): None
 
 ### Setup
-.venv requirements (where applicable)
-run pip install requests
-I was unable to test the application locally using vercel dev, however web application works at: https://capital-finder-nhvt5qgbj-errol-vidads-projects.vercel.app/api/capital-finder
+- .venv requirements (where applicable)
+- run pip install requests
+- I was unable to test the application locally using vercel dev, however web application works at: https://capital-finder-nhvt5qgbj-errol-vidads-projects.vercel.app/api/capital-finder
 
 i.e.
 
