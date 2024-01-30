@@ -13,15 +13,14 @@ class handler(BaseHTTPRequestHandler):
         # checks if the query string contains the word country
         if "country" in dic:
             country_name = dic["country"]
-            # used ChatGPT to correct the url
-            url = "https://restcountries.com/v3.1/name/{country_name}?fullText=true"
-            r = requests.get(url + dic["country"])
-            data = r.json()
-            capital = []
-            for country_data in data:
-                definition = country_data[0]["capital"][0]
-                capital.append(definition)
-            message = f"The capital of {country_name} is {str(capital)}"
+            url = f"https://restcountries.com/v3.1/name/{country_name}?fullText=true"
+            r = requests.get(url)
+            if r.status_code == 200:
+                data = r.json()
+                capital = data[0]["capital"][0] if "capital" in data[0] else "No capital found"
+                message = f"The capital of {country_name} is {capital}"
+            else:
+                message = f"Country {country_name} not found"
 
         elif "capital" in dic:
             capital_name = dic["capital"]
@@ -29,7 +28,7 @@ class handler(BaseHTTPRequestHandler):
             r = requests.get(url)
             if r.status_code == 200:
                 data = r.json()
-                country = data[0]["name"]["common"] if "name" in data[0] else "No country found"
+                country = data[0]["name"]["common"]
                 message = f"{capital_name} is the capital of {country}"
             else:
                 message = f"Capital {capital_name} not found"
