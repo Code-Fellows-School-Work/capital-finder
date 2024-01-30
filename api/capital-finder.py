@@ -3,6 +3,15 @@ from urllib import parse
 import requests
 
 class handler(BaseHTTPRequestHandler):
+    """
+    Logic to fetch a capital or country from a countries API
+
+    User input in web browser:
+        A query string for a country and returns country's capital
+        A query string for a country's capital and returns the country
+
+    Includes logic for invalid country or capital
+    """
     def do_GET(self):
         s = self.path
         url_components = parse.urlsplit(s)
@@ -18,9 +27,9 @@ class handler(BaseHTTPRequestHandler):
             if r.status_code == 200:
                 data = r.json()
                 capital = data[0]["capital"][0]
-                message = f"The capital of {country_name} is {capital}"
+                message = f"The capital of {country_name.capitalize()} is {capital}"
             else:
-                message = f"Country {country_name} not found"
+                message = f"Country {country_name.capitalize()} not found"
 
         elif "capital" in dic:
             capital_name = dic["capital"]
@@ -29,9 +38,9 @@ class handler(BaseHTTPRequestHandler):
             if r.status_code == 200:
                 data = r.json()
                 country = data[0]["name"]["common"]
-                message = f"{capital_name} is the capital of {country}"
+                message = f"{capital_name.capitalize()} is the capital of {country}"
             else:
-                message = f"Capital {capital_name} not found"
+                message = f"Capital {capital_name.capitalize()} not found"
 
         else:
             message = "Please add a query in the url:\nEither ?country='Enter Country'\nor ?capital='Enter Capital'"
