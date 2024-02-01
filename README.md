@@ -7,7 +7,7 @@ V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/13)
 V.1.0.1 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/14)
   - Added doc string and capitalize method to follow proper sentence format
 V.1.0.2 (Pr: https://github.com/Code-Fellows-School-Work/capital-finder/pull/15)
-  - Updated deployment link
+  - Removed node modules directory and updated deployment link 
 
 ### Links and Resources
 - Back-end server url (when applicable): None
